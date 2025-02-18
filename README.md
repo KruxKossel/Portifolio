@@ -8,6 +8,7 @@ Bem-vindo ao meu portfólio! Este projeto é uma coleção dos meus trabalhos e 
 ## Tecnologias Utilizadas
 
 - **React**: Biblioteca JavaScript para construir interfaces de usuário.
+- **Vite**: Ferramenta de build extremamente rápida e moderna para projetos front-end.
 - **GSAP (GreenSock Animation Platform)**: Biblioteca para animações de alta performance em JavaScript.
 - **React Icons**: Biblioteca de ícones para React.
 - **CSS3**: Para estilização e layout.
