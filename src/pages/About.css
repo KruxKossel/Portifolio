@@ -27,7 +27,7 @@
 }
 
 .about-container {
-  padding-top: 120px; /* Adiciona mais espaço para evitar sobreposição do nav */
+  padding-top: 70px; /* Adiciona mais espaço para evitar sobreposição do nav */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -39,7 +39,7 @@
 
 .crow-container {
   position: absolute;
-  top: 10px;
+  top: 20px;
   right: 10px;
   z-index: 1; /* Garante que o corvo não bloqueie os links */
 }
@@ -107,6 +107,15 @@ strong {
 }
 
 @media (max-width: 768px) {
+  .about-container {
+    width: 95%; /* Ajusta a largura da seção para dispositivos móveis */
+    padding-top: 50px; /* Subir o container para cima em telas menores */
+  }
+
+  .crow-container {
+    top: 10px; /* Ajusta a posição superior para ficar abaixo do nav */
+  }
+
   .about-icon-size {
     font-size: 30px !important; /* Ajusta o tamanho dos ícones para telas menores */
   }
