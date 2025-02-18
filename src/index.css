@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap'); /* Fonte Montserrat */
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif; /* Fonte Montserrat */
+  background: linear-gradient(45deg, #8B00FF, #6A0DAD, #4B0082, #2E0854); /* Gradiente com mais tons de roxo */
+  color: #fff; /* Cor do texto */
+  position: relative;
+  overflow: hidden;
+}
+
+/* Adicione mais estilos aqui conforme necessário */

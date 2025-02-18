@@ -1,0 +1,40 @@
+/* RainEffect.css */
+.rain-container {
+  position: absolute;
+  top: 0;
+  left: 0; /* Muda a posição para a esquerda */
+  width: 200px; /* Ajuste conforme necessário */
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+  pointer-events: none; /* Garante que o fundo não afete a interação do usuário com a página */
+  z-index: 1; /* Ajusta os riscos acima do gradiente de fundo */
+}
+
+.rain-column {
+  flex: 1; /* Distribui uniformemente o espaço entre as colunas */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.raindrop {
+  width: 2px; /* Ajuste conforme necessário */
+  height: 10px; /* Ajuste conforme necessário */
+  background: rgba(255, 255, 255, 0.2);
+  margin-bottom: 10px; /* Ajuste conforme necessário */
+}
+
+/* Adicione media queries para responsividade */
+@media (max-width: 768px) {
+  .rain-container {
+    width: 100px; /* Ajuste conforme necessário para dispositivos móveis */
+  }
+
+  .raindrop {
+    width: 1px; /* Ajuste conforme necessário para dispositivos móveis */
+    height: 5px; /* Ajuste conforme necessário para dispositivos móveis */
+    margin-bottom: 5px; /* Ajuste conforme necessário para dispositivos móveis */
+  }
+}
