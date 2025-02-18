@@ -3,7 +3,7 @@ Bem-vindo ao meu portfólio! Este projeto é uma coleção dos meus trabalhos e 
 
 ## Preview do Site
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/e35bd010-aa24-4bfd-b206-ac2deb392540/deploy-status)](https://app.netlify.com/sites/portifolio-ellen-kos/deploys)
+[![Site preview](/src/assests/portfolioImage.png)](https://portifolio-ellen-kos.netlify.app/)
 
 ## Tecnologias Utilizadas
 
