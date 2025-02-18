@@ -3,7 +3,7 @@ Bem-vindo ao meu portfólio! Este projeto é uma coleção dos meus trabalhos e 
 
 ## Preview do Site
 
-[![Site preview](/src/assests/portfolioImage.png)](https://portifolio-ellen-kos.netlify.app/)
+[![Site preview](/public/portfolioImage.png)](https://portifolio-ellen-kos.netlify.app/)
 
 ## Tecnologias Utilizadas
 
