@@ -50,16 +50,6 @@
   pointer-events: none; /* Garante que o corvo não interfira nos cliques */
 }
 
-@media (max-width: 768px) {
-  .about-container {
-    width: 95%; /* Ajusta a largura da seção para dispositivos móveis */
-  }
-
-  .crow-container {
-    top: 70px; /* Ajusta a posição superior para ficar abaixo do nav */
-  }
-}
-
 .about-content {
   max-height: 50vh; /* Limita a altura do conteúdo */
   overflow-y: auto; /* Adiciona rolagem interna */
@@ -114,6 +104,12 @@ strong {
 .about-icon-size {
   font-size: 60px !important;
   pointer-events: auto; /* Garante que os ícones sejam clicáveis */
+}
+
+@media (max-width: 768px) {
+  .about-icon-size {
+    font-size: 30px !important; /* Ajusta o tamanho dos ícones para telas menores */
+  }
 }
 
 .highlight {
