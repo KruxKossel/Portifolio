@@ -3,24 +3,42 @@
   flex-direction: column;
   align-items: center;
   width: 100vw; /* Ocupa toda a largura da tela */
-  height: 100vh; /* Ocupa toda a altura da tela */
-  overflow-y: hidden; /* Previne rolagem padrão */
+  min-height: calc(100vh - 60px); /* Ajusta a altura mínima para ocupar a tela inteira, subtraindo a altura do nav */
+  overflow-y: auto; /* Permite rolagem vertical na tela principal */
   background: transparent; /* Transparente para herdar o gradiente do body */
+  padding-top: 50px; /* Garante que o conteúdo não fique atrás do nav */
 }
 
 .projects-title {
-  padding-top: 60px; /* Espaçamento para evitar sobreposição do nav e subir o título */
   text-align: center;
   font-size: 35px;
   color: #DA70D6; /* Cor do Kali Linux */
+  margin-bottom: 60px; /* Maior espaçamento abaixo do título */
+  animation: slideDown 1s ease-in-out; /* Animação de entrada suave */
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hint {
+  display: none; /* Oculta por padrão */
 }
 
 .projects-container {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  width: 100%;
-  padding-top: 10px; /* Subir os cards */
+  justify-content: center; /* Centraliza os cards */
+  gap: 20px; /* Espaçamento entre os cards */
+  width: 90%;
+  overflow-x: auto; /* Permite rolagem horizontal */
+  -webkit-overflow-scrolling: touch; /* Scroll nativo em dispositivos iOS */
 }
 
 .project-card {
@@ -28,27 +46,39 @@
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  width: 100%;
-  max-width: 300px;
-  margin: 20px;
+  width: 300px; /* Largura fixa para os cards */
   text-align: left;
+  flex-shrink: 0; /* Impede que os projetos encolham */
+  transition: transform 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.project-card:hover {
+  transform: scale(1.05);
 }
 
 .project-image {
   width: 100%;
-  height: auto;
-  object-fit: contain; /* Garante que a imagem não será cortada */
+  height: 200px; /* Define a altura fixa para as imagens */
+  object-fit: cover; /* Ajusta a imagem dentro do container mantendo a proporção */
 }
 
 .project-info {
   padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%; /* Garante que a info ocupa a altura completa */
 }
 
 .project-links {
   display: flex;
-  gap: 30px; /* Maior espaçamento entre os ícones */
-  justify-content: center;
-  margin-top: 10px;
+  gap: 50px; /* Maior espaçamento entre os ícones */
+  justify-content: space-around;
+  margin-top: 20px; /* Maior espaçamento acima dos ícones */
+  align-items: flex-end; /* Alinha os ícones na mesma linha */
 }
 
 .project-links a {
@@ -89,6 +119,32 @@
     flex-direction: column; /* Alinhando conteúdo em coluna */
   }
   .projects-title {
-    padding-top: 30px; /* Ajusta o espaçamento para evitar sobreposição do nav */
+    padding-top: 60px; /* Ajusta o espaçamento para evitar sobreposição do nav */
+    margin-bottom: 40px; /* Ajusta o espaçamento abaixo do título */
+  }
+  .projects-container {
+    justify-content: flex-start; /* Alinha os cards no início */
+    gap: 10px; /* Espaçamento menor entre os cards */
+    overflow-x: auto; /* Permite rolagem horizontal */
+  }
+  .project-card {
+    width: 250px; /* Ajusta a largura dos cards para dispositivos móveis */
+    margin: 10px;
+  }
+  .project-image {
+    height: 150px; /* Reduz a altura das imagens em dispositivos móveis */
+  }
+  .hint {
+    display: flex; /* Exibe a dica apenas em dispositivos móveis */
+    font-size: 16px;
+    color: #FFD700; /* Cor dourada */
+    text-align: center;
+    margin-bottom: 20px;
+    justify-content: center;
+    align-items: center;
+  }
+  .hint .arrow {
+    font-size: 20px;
+    margin-left: 10px;
   }
 }
