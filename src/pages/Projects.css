@@ -13,7 +13,7 @@
   text-align: center;
   font-size: 35px;
   color: #DA70D6; /* Cor do Kali Linux */
-  margin-bottom: 60px; /* Maior espaçamento abaixo do título */
+  margin-bottom: 100px; /* Maior espaçamento abaixo do título */
   animation: slideDown 1s ease-in-out; /* Animação de entrada suave */
 }
 
@@ -119,8 +119,8 @@
     flex-direction: column; /* Alinhando conteúdo em coluna */
   }
   .projects-title {
-    padding-top: 60px; /* Ajusta o espaçamento para evitar sobreposição do nav */
-    margin-bottom: 40px; /* Ajusta o espaçamento abaixo do título */
+    padding-top: 10px; /* Ajusta o espaçamento para evitar sobreposição do nav */
+    margin-bottom: 60px; /* Ajusta o espaçamento abaixo do título */
   }
   .projects-container {
     justify-content: flex-start; /* Alinha os cards no início */
