@@ -158,6 +158,7 @@ p {
     width: 100%; /* Ocupa toda a largura */
     margin-right: 0; /* Remove margem lateral direita */
     margin-top: 10px; /* Ajusta espaçamento superior */
+    margin-bottom: 80px;
   }
 
   h1 {
