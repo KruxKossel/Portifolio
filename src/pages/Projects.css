@@ -119,7 +119,6 @@
     flex-direction: column; /* Alinhando conteúdo em coluna */
   }
   .projects-title {
-    padding-top: 10px; /* Ajusta o espaçamento para evitar sobreposição do nav */
     margin-bottom: 60px; /* Ajusta o espaçamento abaixo do título */
   }
   .projects-container {

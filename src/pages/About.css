@@ -110,6 +110,8 @@ strong {
   .about-container {
     width: 95%; /* Ajusta a largura da seção para dispositivos móveis */
     padding-top: 50px; /* Subir o container para cima em telas menores */
+    margin-top: 50px; /* Ajusta espaçamento superior */
+    margin-bottom: 10px;
   }
 
   .crow-container {
