@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { FaReact, FaHtml5, FaCss3Alt, FaJava, FaCrow } from "react-icons/fa";
+import { FaReact, FaHtml5, FaCss3Alt, FaJava, FaCrow, FaPython } from "react-icons/fa";
 import { PiFileCSharpDuotone } from "react-icons/pi";
 import { IoLogoFirebase } from "react-icons/io5";
 import { DiSqllite } from "react-icons/di";
@@ -62,7 +62,7 @@ const About = () => {
           </p>
           <p>
             Iniciei um novo curso na área de <span className="highlight">Segurança da Informação</span> em 2025, pois planejo seguir carreira em cibersegurança, mas ser uma desenvolvedora de software também é uma opção. 
-            Me considero muito boa em lógica de programação. A linguagem que mais tenho familiaridade é <span className="highlight">C#</span> e seu framework, pois trabalhei muito com ela durante meu curso. Entendo de <span className="highlight">CSS</span> e <span className="highlight">HTML</span>, conheço <span className="highlight">C</span>, <span className="highlight">Java</span>, <span className="highlight">JavaScript</span> e considero que consigo aprender rapidamente qualquer linguagem, já que a maior diferença entre elas é a sintaxe.
+            Me considero muito boa em lógica de programação. A linguagem que mais tenho familiaridade é <span className="highlight">C#</span> e seu framework, pois trabalhei muito com ela durante meu curso. Entendo de <span className="highlight">CSS</span> e <span className="highlight">HTML</span>, conheço <span className="highlight">C</span>, <span className="highlight">Java</span>, <span className="highlight">JavaScript</span>, <span className="highlight">python</span> e considero que consigo aprender rapidamente qualquer linguagem, já que a maior diferença entre elas é a sintaxe.
           </p>
           <p>
             Além disso, também conheço <span className="highlight">Lua</span> e sua extensão <span className="highlight">Luau</span>, que utilizo para desenvolver jogos no Roblox, mais como um hobby. Para ser um bom desenvolvedor, acredito que é necessário ter curiosidade, vontade de continuar aprendendo e estudando, não ter medo de perguntar, experimentar e conhecer diferentes bibliotecas e APIs, além de buscar evoluir. É importante ser organizado, fazer um código modular, limpo e bem documentado. Essas são qualidades que criam um bom desenvolvedor.
@@ -104,6 +104,9 @@ const About = () => {
           </a>
           <a href="https://www.sqlite.org/docs.html" target="_blank" rel="noopener noreferrer">
             <DiSqllite className="about-icon-size kali-color" />
+          </a>
+          <a href="https://www.python.org/doc/" target="_blank" rel="noopener noreferrer">
+            <FaPython className="about-icon-size kali-color" />
           </a>
         </div>
       </div>

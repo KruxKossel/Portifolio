@@ -18,7 +18,7 @@ const Home = () => {
       <div className="left"> {/* Seção esquerda com informações pessoais */}
         <h1>Ellen KOS.</h1>
         <strong><p className="light-paragraph">Desenvolvedora FullStack</p></strong>
-        <p className="dark-paragraph">.Net | ReactJs | AngularTs | Java | Flutter | SQL | Lua | Segurança da Informação</p>
+        <p className="dark-paragraph">.Net | ReactJs | Flutter | SQL | Python | Lua | Segurança da Informação</p>
       </div>
       <div className="right"> {/* Seção direita para o ícone */}
         <div className={`icon-container ${showIcon ? 'fade-in' : 'hidden'}`}> {/* Classe CSS condicional para animação */}
