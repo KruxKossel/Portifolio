@@ -3,6 +3,7 @@ import './Projects.css';
 import plantechImage from '../assets/plantech.jpg';
 import portfolioImage from '../assets/portfolioImage.png';
 import luaSBImage from '../assets/luaSB.png';
+import mastersofpwnageImage from '../assets/mastersofpwnage.png'; // Ajuste o caminho se necessário
 import { FaGithub } from 'react-icons/fa';
 import { AiFillEye } from 'react-icons/ai';
 import { MdKeyboardArrowRight } from 'react-icons/md'; // Importa a seta
@@ -50,6 +51,13 @@ const Projects = () => {
       repoLink: "https://github.com/KruxKossel/Simulador-de-batalhas",
       liveLink: ""
     },
+    {
+      id: 4,
+      image: mastersofpwnageImage, 
+      title: "Masters of Pwnage Playable",
+      repoLink: "https://github.com/Masters-Of-Pwnage/mop-playable",
+      liveLink: "https://masters-of-pwnage.github.io/mop-playable/"
+    }
     // Adicione outros projetos aqui
   ];
 
