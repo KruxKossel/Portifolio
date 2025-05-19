@@ -13,12 +13,27 @@
       connect-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com;
     '''
 
+# Configuração de MIME types
+[[headers]]
+  for = "/*.js"
+  [headers.values]
+    Content-Type = "application/javascript"
+
+[[headers]]
+  for = "/*.css"
+  [headers.values]
+    Content-Type = "text/css"
+
+[[headers]]
+  for = "/*.mjs"
+  [headers.values]
+    Content-Type = "application/javascript"
+
 # Redireciona todas as rotas para o index.html
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
-  force = true # Força o redirecionamento mesmo se o caminho existir
 
 # Redireciona rotas específicas
 [[redirects]]
