@@ -1,0 +1,102 @@
+.dragon-icon {
+  font-size: 200px;
+  background: linear-gradient(45deg, #FFD700, #D8BFD8, #8B00FF, #6A0DAD);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: moveSideways 4s infinite alternate;
+}
+
+@keyframes moveSideways {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-20px);
+  }
+  100% {
+    transform: translateX(20px);
+  }
+}
+
+.dragon-icon:hover {
+  transform: scale(1.1);
+}
+
+.move {
+  animation: moveSideways 4s infinite alternate;
+}
+
+/* Animação de brilho */
+@keyframes shine {
+  0%, 20%, 100% {
+    opacity: 1;
+  }
+  10%, 30% {
+    opacity: 0.5;
+  }
+}
+
+/* Animação de slideUp */
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Animação de fade-in */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Estilo do ícone com glitch */
+.glitch-icon {
+  font-size: clamp(100px, 15vw, 300px);
+  animation: shine 10s infinite, moveSideways 4s infinite alternate;
+  background: linear-gradient(45deg, #FFD700, #D8BFD8, #8B00FF, #6A0DAD);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all 0.3s ease;
+}
+
+/* Classe para ocultar elementos */
+.hidden {
+  opacity: 0;
+}
+
+/* Animação de fade-in */
+.fade-in {
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .dragon-icon {
+    font-size: 150px;
+  }
+  .glitch-icon {
+    font-size: clamp(80px, 20vw, 150px);
+  }
+}
+
+@media (min-width: 1024px) {
+  .glitch-icon {
+    font-size: clamp(150px, 18vw, 350px);
+  }
+}
+
+@media (min-width: 1440px) {
+  .glitch-icon {
+    font-size: clamp(200px, 20vw, 400px);
+  }
+} 

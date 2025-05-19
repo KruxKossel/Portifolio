@@ -1,14 +1,112 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap'); /* Fonte Montserrat */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-html, body, #root {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  font-family: 'Montserrat', sans-serif; /* Fonte Montserrat */
-  background: linear-gradient(45deg, #8B00FF, #6A0DAD, #4B0082, #2E0854); /* Gradiente com mais tons de roxo */
-  color: #fff; /* Cor do texto */
-  position: relative;
-  overflow: hidden;
+@layer base {
+  html {
+    @apply h-full m-0 p-0 font-['Montserrat'];
+  }
+  
+  body {
+    @apply h-full m-0 p-0 text-white relative;
+    background: linear-gradient(135deg, #1A0B2E, #2C1250, #3B1B6B);
+  }
+  
+  #root {
+    @apply h-full m-0 p-0 relative;
+    min-height: 100vh;
+  }
+
+  /* Estilo para scrollbar personalizada */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-black/20;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-purple-500/50 rounded-full hover:bg-purple-500/70 transition-colors;
+  }
+}
+
+/* Classe para conteúdo principal */
+.main-content {
+  height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* Variáveis de cores do tema */
+:root {
+  /* Cores principais */
+  --color-bg-primary: #1A0B2E;    /* Roxo escuro para fundo */
+  --color-bg-secondary: #2C1250;   /* Roxo médio para fundo */
+  
+  /* Cores de destaque */
+  --color-primary: #8B5CF6;        /* Roxo vibrante para elementos principais */
+  --color-secondary: #C084FC;      /* Lilás para elementos secundários */
+  --color-accent: #F0ABFC;         /* Rosa suave para acentos */
+  
+  /* Cores funcionais */
+  --color-success: #22C55E;        /* Verde para sucesso */
+  --color-warning: #F59E0B;        /* Amarelo para avisos */
+  --color-error: #EF4444;          /* Vermelho para erros */
+  
+  /* Tons de texto */
+  --color-text-primary: #F8FAFC;   /* Branco suave para texto principal */
+  --color-text-secondary: #CBD5E1;  /* Cinza claro para texto secundário */
+  --color-text-muted: #94A3B8;     /* Cinza médio para texto desenfatizado */
+  
+  /* Cores de interação */
+  --color-hover: #A855F7;          /* Roxo mais claro para hover */
+  --color-active: #6D28D9;         /* Roxo mais escuro para active */
+  
+  /* Cores de fundo para cards */
+  --color-surface: rgba(255, 255, 255, 0.05);  /* Branco com baixa opacidade */
+  --color-surface-hover: rgba(255, 255, 255, 0.1);
+}
+
+/* Classes de utilidade */
+.bg-gradient-primary {
+  background: linear-gradient(135deg, var(--color-bg-primary), var(--color-bg-secondary));
+}
+
+.bg-glass {
+  background: var(--color-surface);
+  backdrop-filter: blur(8px);
+}
+
+.bg-glass:hover {
+  background: var(--color-surface-hover);
+}
+
+.text-gradient {
+  background: linear-gradient(to right, var(--color-primary), var(--color-accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Transições suaves */
+.transition-default {
+  transition: all 0.3s ease-in-out;
+}
+
+/* Sombras personalizadas */
+.shadow-glow {
+  box-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
+}
+
+/* Efeitos de hover */
+.hover-lift {
+  transition: transform 0.2s ease-in-out;
+}
+
+.hover-lift:hover {
+  transform: translateY(-2px);
 }
 
 /* Adicione mais estilos aqui conforme necessário */

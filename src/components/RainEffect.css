@@ -1,10 +1,10 @@
 /* RainEffect.css */
 .rain-container {
-  position: absolute;
+  position: fixed;
   top: 0;
-  left: 0; /* Muda a posição para a esquerda */
-  width: 200px; /* Ajuste conforme necessário */
-  height: 100%;
+  left: 0;
+  width: min(180px, 20vw);
+  height: 100vh;
   display: flex;
   justify-content: space-between;
   overflow: hidden;
@@ -20,21 +20,21 @@
 }
 
 .raindrop {
-  width: 2px; /* Ajuste conforme necessário */
-  height: 10px; /* Ajuste conforme necessário */
-  background: rgba(255, 255, 255, 0.2);
+  width: 2px; /* Voltando para a espessura original */
+  height: 10px; /* Voltando para o tamanho original */
+  background: rgba(255, 255, 255, 0.2); /* Voltando para a opacidade original */
   margin-bottom: 10px; /* Ajuste conforme necessário */
 }
 
 /* Adicione media queries para responsividade */
 @media (max-width: 768px) {
   .rain-container {
-    width: 100px; /* Ajuste conforme necessário para dispositivos móveis */
+    width: min(25px, 10vw);
   }
 
   .raindrop {
-    width: 1px; /* Ajuste conforme necessário para dispositivos móveis */
-    height: 5px; /* Ajuste conforme necessário para dispositivos móveis */
-    margin-bottom: 5px; /* Ajuste conforme necessário para dispositivos móveis */
+    width: 1.5px; /* Mantendo proporção com a versão desktop */
+    height: 8px;
+    margin-bottom: 5px;
   }
 }

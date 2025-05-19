@@ -1,13 +1,13 @@
-import { Route, Routes, Link, useLocation } from 'react-router-dom';
+import { Route, Routes, useLocation } from 'react-router-dom';
 import Home from './pages/Home';
 import About from './pages/About';
 import Projects from './pages/Projects';
-import { AiOutlineHome, AiOutlineUser, AiOutlineProject } from 'react-icons/ai';
-import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa'; // Importação dos ícones de contato
 import { useEffect, useRef } from 'react';
-import RainEffect from './components/RainEffect'; // Importa o componente RainEffect
-import './App.css';
-import './components/RainEffect.css'; // Importa os estilos do RainEffect
+import RainEffect from './components/RainEffect';
+import Layout from './components/Layout';
+import SocialLinks from './components/SocialLinks';
+import { Z_INDEX } from './constants/theme';
+import './components/RainEffect.css';
 
 function App() {
   const location = useLocation();
@@ -15,48 +15,38 @@ function App() {
 
   useEffect(() => {
     if (mainContentRef.current) {
-      mainContentRef.current.scrollTo({ top: 0, behavior: 'smooth' }); // Suaviza a rolagem ao mudar de rota
+      mainContentRef.current.scrollTo({ top: 0, behavior: 'smooth' });
     }
   }, [location]);
 
   return (
-    <div className="app">
-      <nav className="nav"> {/* Navegação */}
-        <Link to="/" className="menu-item" state={{ from: location.pathname }}>
-          <span className="menu-text">Home</span>
-          <span className="menu-icon"><AiOutlineHome size={24} /></span>
-        </Link>
-        <Link to="/about" className="menu-item" state={{ from: location.pathname }}>
-          <span className="menu-text">About</span>
-          <span className="menu-icon"><AiOutlineUser size={24} /></span>
-        </Link>
-        <Link to="/projects" className="menu-item" state={{ from: location.pathname }}>
-          <span className="menu-text">Projects</span>
-          <span className="menu-icon"><AiOutlineProject size={24} /></span>
-        </Link>
-      </nav>
-      <div className="main-content" ref={mainContentRef}> {/* Conteúdo principal */}
-        <div className="content">
-          <Routes location={location}> {/* Rotas */}
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/projects" element={<Projects />} />
-          </Routes>
+    <Layout useFlexibleGrid={location.pathname === '/projects'}>
+      <div className="relative min-h-full w-full">
+        <div className="main-content h-full overflow-y-auto" ref={mainContentRef}>
+          <div className="content">
+            <Routes location={location}>
+              <Route path="/" element={<Home />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/projects" element={<Projects />} />
+            </Routes>
+          </div>
+        </div>
+
+        {/* Card de redes sociais - apenas versão desktop */}
+        <div 
+          className="hidden md:flex fixed top-24 right-6"
+          style={{ zIndex: Z_INDEX.overlay }}
+        >
+          <div className="flex flex-col gap-5 bg-purple-500/80 backdrop-blur-sm p-4 rounded-lg shadow-lg">
+            <SocialLinks iconSize={28} />
+          </div>
+        </div>
+
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <RainEffect />
         </div>
       </div>
-      <div className="card"> {/* Card de ícones de contato */}
-        <a href="https://github.com/KruxKossel" target="_blank" rel="noopener noreferrer">
-          <FaGithub className="icon" /> {/* Ícone do GitHub */}
-        </a>
-        <a href="https://www.linkedin.com/in/ellen-oliveira-931a5926b/" target="_blank" rel="noopener noreferrer">
-          <FaLinkedin className="icon" /> {/* Ícone do LinkedIn */}
-        </a>
-        <a href="mailto:ellenprof57@gmail.com">
-          <FaEnvelope className="icon" /> {/* Ícone do e-mail */}
-        </a>
-      </div>
-      <RainEffect /> {/* Adiciona o componente RainEffect */}
-    </div>
+    </Layout>
   );
 }
 
