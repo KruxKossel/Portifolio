@@ -8,7 +8,7 @@
 > ⚠️ **Nota**: Este é um projeto pessoal e serve apenas como referência/inspiração. Não estou aceitando contribuições diretas, mas você pode fazer um fork e adaptá-lo ao seu gosto seguindo a licença MIT.
 
 <div align="center">
-  <img src="./src/assets/portifolioHome.png" alt="Preview do Portfólio" width="100%" />
+  <img src="./public/portifolioHome.png" alt="Preview do Portfólio" width="100%" />
   
   ### 🌐 [Visite o Site](https://portifolio-ellen-kos.netlify.app/)
 </div>
