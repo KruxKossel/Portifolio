@@ -102,7 +102,7 @@ const Projects = () => {
     : projects.filter(project => project.type === filter);
 
   return (
-    <div className="h-screen w-full flex flex-col relative pt-24 md:pt-28 pb-20 md:pb-28">
+    <div className="h-screen w-full flex flex-col relative pt-24 md:pt-28 pb-28 md:pb-28">
       <div className={`flex-1 flex flex-col transform transition-all duration-1000
                     ${showContent ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
         

@@ -149,7 +149,7 @@ No curto prazo, estou focada em aplicar meus conhecimentos em projetos desafiado
 
           {/* Corvo para todas as telas */}
           <div className="w-full flex justify-end mb-2 md:mb-3" style={{ zIndex: Z_INDEX.crow }}>
-            <FaCrow className="crow-icon text-2xl md:text-3xl text-[#8B5CF6] hover:text-[#C084FC] transition-colors" />
+            <FaCrow className="crow-icon text-2xl md:text-3xl text-black hover:text-gray-800 transition-colors" />
           </div>
 
           {/* Cabeçalho */}
@@ -161,7 +161,7 @@ No curto prazo, estou focada em aplicar meus conhecimentos em projetos desafiado
           </div>
 
           {/* Grid de tópicos - visível em todas as telas */}
-          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-3 mb-2 md:mb-4">
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-3 mb-6 md:mb-8">
             {topics.map((topic) => (
               <button
                 key={topic.id}
@@ -211,8 +211,8 @@ No curto prazo, estou focada em aplicar meus conhecimentos em projetos desafiado
                   <TbBrandVscode className="text-lg md:text-4xl text-blue-600 hover:text-blue-500 transition-colors" />
                 </div>
               </div>
-      </div>
-        </div>
+            </div>
+          </div>
         </div>
       </div>
 
