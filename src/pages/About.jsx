@@ -142,9 +142,9 @@ No curto prazo, estou focada em aplicar meus conhecimentos em projetos desafiado
   ];
 
   return (
-    <div className="min-h-[calc(100vh-120px)] w-full flex flex-col overflow-hidden relative mt-16 md:mt-20 pb-10 md:pb-20">      {/* Container principal sem scroll */}
+    <div className="h-[calc(100vh-120px)] w-full flex flex-col overflow-hidden relative mt-16 md:mt-20 pb-10 md:pb-20">      {/* Container principal sem scroll */}
       <div className="flex-1 flex flex-col justify-center items-center">
-        <div className={`w-full px-3 md:px-[10%] transform transition-all duration-1000
+        <div className={`w-full px-4 md:px-[10%] transform transition-all duration-1000
                       ${showContent ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
 
           {/* Corvo para todas as telas */}
@@ -153,72 +153,66 @@ No curto prazo, estou focada em aplicar meus conhecimentos em projetos desafiado
           </div>
 
           {/* Cabeçalho */}
-          <div className="mb-3 md:mb-4">
-            <h2 className="text-2xl md:text-4xl font-bold text-white mb-1 md:mb-1.5">Olá!</h2>
-            <h3 className="text-lg md:text-2xl text-[#C084FC]">
+          <div className="mb-2 md:mb-4">
+            <h2 className="text-xl md:text-4xl font-bold text-white mb-0.5 md:mb-1.5">Olá!</h2>
+            <h3 className="text-base md:text-2xl text-[#C084FC]">
               Descubra um pouco sobre minha jornada
             </h3>
           </div>
 
-          {/* Caixa com scroll apenas para os tópicos */}
-          <div className="flex-1 min-h-0 bg-[#1A0B2E] rounded-lg p-2 md:p-4 border border-[#3B1B6B]/30 md:max-h-[clamp(250px,35vh,500px)]">
-            <div className="h-full overflow-y-auto scrollbar-thin scrollbar-track-[#1A0B2E] scrollbar-thumb-[#8B5CF6] pr-2">
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-3">
-                {topics.map((topic) => (
-                  <button
-                    key={topic.id}
-                    onClick={() => setSelectedTopic(topic)}
-                    className="bg-[#2C1250] rounded-lg p-2 md:p-4 text-left 
-                             hover:bg-[#3B1B6B] transition-all duration-300 hover:scale-[1.02]
-                             border border-[#3B1B6B]/30 hover:border-white/30 group 
-                             shadow-[0_0_15px_rgba(139,92,246,0.1)] hover:shadow-[0_0_20px_rgba(255,255,255,0.1)]"
-                  >
-                    <div className="flex items-center gap-1.5 md:gap-3 mb-1 md:mb-1.5">
-                      <div className="text-white group-hover:text-[#F0ABFC] transition-colors">
-                        {topic.icon}
-                      </div>
-                      <h4 className="text-xs md:text-base font-semibold text-[#F0ABFC] group-hover:text-white transition-colors">
-                        {topic.title}
-                      </h4>
-                    </div>
-                    <p className="text-[10px] md:text-xs text-white/80 line-clamp-2">
-                      {topic.content}
-                    </p>
-                  </button>
-                ))}
-              </div>
-            </div>
+          {/* Grid de tópicos - visível em todas as telas */}
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-3 mb-2 md:mb-4">
+            {topics.map((topic) => (
+              <button
+                key={topic.id}
+                onClick={() => setSelectedTopic(topic)}
+                className="bg-[#2C1250] rounded-lg p-2 md:p-3 text-left h-[40px] md:h-[50px]
+                         hover:bg-[#3B1B6B] transition-all duration-300 hover:scale-[1.02]
+                         border-2 border-black/50 hover:border-white/50 group 
+                         shadow-[0_0_15px_rgba(139,92,246,0.1)] hover:shadow-[0_0_20px_rgba(255,255,255,0.1)]
+                         flex items-center"
+              >
+                <div className="flex items-center gap-1.5 md:gap-2">
+                  <div className="text-white group-hover:text-[#F0ABFC] transition-colors">
+                    {topic.icon}
+                  </div>
+                  <h4 className="text-[10px] md:text-sm font-semibold text-[#F0ABFC] group-hover:text-white transition-colors">
+                    {topic.title}
+                  </h4>
+                </div>
+              </button>
+            ))}
           </div>
 
           {/* Seção de Tecnologias */}
-          <div className="mt-1.5 md:mt-4 flex-shrink-0">
-            <h3 className="text-base md:text-2xl font-bold text-white mb-1.5 md:mb-3">Tecnologias</h3>
+          <div className="mt-1 md:mt-4 flex-shrink-0">
+            <h3 className="text-sm md:text-2xl font-bold text-white mb-1 md:mb-3">Tecnologias</h3>
             <div className="relative">
-              <div className="tech-scroll overflow-x-auto pb-2 md:pb-6 scrollbar-thin scrollbar-track-[#1A0B2E] scrollbar-thumb-white/20 hover:scrollbar-thumb-white/40">
-                <div className="flex gap-3 md:gap-8 items-center min-w-max px-1 md:px-2 pb-1 md:pb-2">
-                  <RiJavascriptFill className="text-xl md:text-4xl text-yellow-300 hover:text-yellow-200 transition-colors" />
-                  <FaReact className="text-xl md:text-4xl text-cyan-400 hover:text-cyan-300 transition-colors" />
-                  <FaHtml5 className="text-xl md:text-4xl text-orange-500 hover:text-orange-400 transition-colors" />
-                  <FaCss3Alt className="text-xl md:text-4xl text-blue-500 hover:text-blue-400 transition-colors" />
-                  <PiFileCSharpDuotone className="text-xl md:text-4xl text-purple-500 hover:text-purple-400 transition-colors" />
-                  <DiDotnet className="text-xl md:text-4xl text-white hover:text-[#F0ABFC] transition-colors" />
-                  <FaJava className="text-xl md:text-4xl text-red-500 hover:text-red-400 transition-colors" />
-                  <SiC className="text-xl md:text-4xl text-blue-400 hover:text-blue-300 transition-colors" />
-                  <SiLua className="text-xl md:text-4xl text-blue-300 hover:text-blue-200 transition-colors" />
-                  <IoLogoFirebase className="text-xl md:text-4xl text-yellow-500 hover:text-yellow-400 transition-colors" />
-                  <DiSqllite className="text-xl md:text-4xl text-blue-600 hover:text-blue-500 transition-colors" />
-                  <SiPostgresql className="text-xl md:text-4xl text-blue-400 hover:text-blue-300 transition-colors" />
-                  <FaPython className="text-xl md:text-4xl text-yellow-400 hover:text-yellow-300 transition-colors" />
-                  <SiTailwindcss className="text-xl md:text-4xl text-cyan-500 hover:text-cyan-400 transition-colors" />
-                  <SiTypescript className="text-xl md:text-4xl text-blue-500 hover:text-blue-400 transition-colors" />
-                  <FaGitAlt className="text-xl md:text-4xl text-orange-600 hover:text-orange-500 transition-colors" />
-                  <FaGithub className="text-xl md:text-4xl text-white hover:text-[#F0ABFC] transition-colors" />
-                  <FaDocker className="text-xl md:text-4xl text-blue-500 hover:text-blue-400 transition-colors" />
-                  <TbBrandVscode className="text-xl md:text-4xl text-blue-600 hover:text-blue-500 transition-colors" />
+              <div className="tech-scroll overflow-x-auto pb-1 md:pb-6 scrollbar-thin scrollbar-track-[#1A0B2E] scrollbar-thumb-white/20 hover:scrollbar-thumb-white/40">
+                <div className="flex gap-2 md:gap-8 items-center min-w-max px-1 md:px-2 pb-1 md:pb-2">
+                  <RiJavascriptFill className="text-lg md:text-4xl text-yellow-300 hover:text-yellow-200 transition-colors" />
+                  <FaReact className="text-lg md:text-4xl text-cyan-400 hover:text-cyan-300 transition-colors" />
+                  <FaHtml5 className="text-lg md:text-4xl text-orange-500 hover:text-orange-400 transition-colors" />
+                  <FaCss3Alt className="text-lg md:text-4xl text-blue-500 hover:text-blue-400 transition-colors" />
+                  <PiFileCSharpDuotone className="text-lg md:text-4xl text-purple-500 hover:text-purple-400 transition-colors" />
+                  <DiDotnet className="text-lg md:text-4xl text-white hover:text-[#F0ABFC] transition-colors" />
+                  <FaJava className="text-lg md:text-4xl text-red-500 hover:text-red-400 transition-colors" />
+                  <SiC className="text-lg md:text-4xl text-blue-400 hover:text-blue-300 transition-colors" />
+                  <SiLua className="text-lg md:text-4xl text-blue-300 hover:text-blue-200 transition-colors" />
+                  <IoLogoFirebase className="text-lg md:text-4xl text-yellow-500 hover:text-yellow-400 transition-colors" />
+                  <DiSqllite className="text-lg md:text-4xl text-blue-600 hover:text-blue-500 transition-colors" />
+                  <SiPostgresql className="text-lg md:text-4xl text-blue-400 hover:text-blue-300 transition-colors" />
+                  <FaPython className="text-lg md:text-4xl text-yellow-400 hover:text-yellow-300 transition-colors" />
+                  <SiTailwindcss className="text-lg md:text-4xl text-cyan-500 hover:text-cyan-400 transition-colors" />
+                  <SiTypescript className="text-lg md:text-4xl text-blue-500 hover:text-blue-400 transition-colors" />
+                  <FaGitAlt className="text-lg md:text-4xl text-orange-600 hover:text-orange-500 transition-colors" />
+                  <FaGithub className="text-lg md:text-4xl text-white hover:text-[#F0ABFC] transition-colors" />
+                  <FaDocker className="text-lg md:text-4xl text-blue-500 hover:text-blue-400 transition-colors" />
+                  <TbBrandVscode className="text-lg md:text-4xl text-blue-600 hover:text-blue-500 transition-colors" />
                 </div>
               </div>
-            </div>
-          </div>
+      </div>
+        </div>
         </div>
       </div>
 

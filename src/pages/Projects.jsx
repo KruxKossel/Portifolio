@@ -102,20 +102,20 @@ const Projects = () => {
     : projects.filter(project => project.type === filter);
 
   return (
-    <div className="h-screen w-full flex flex-col relative pt-24 pb-28">
+    <div className="h-screen w-full flex flex-col relative pt-24 md:pt-28 pb-20 md:pb-28">
       <div className={`flex-1 flex flex-col transform transition-all duration-1000
                     ${showContent ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
         
         {/* Cabeçalho com título e filtros */}
-        <div className="w-full md:w-[80%] mx-auto mb-6 text-center">
-          <h1 className="text-3xl md:text-4xl font-bold mb-6 text-white">
+        <div className="w-full md:w-[80%] mx-auto mb-3 md:mb-6 text-center">
+          <h1 className="text-2xl md:text-4xl font-bold mb-3 md:mb-6 text-white">
             Meus Projetos
           </h1>
           
-          <div className="flex flex-wrap justify-center gap-3 md:gap-4" role="tablist">
+          <div className="flex flex-wrap justify-center gap-2 md:gap-4" role="tablist">
             <button 
               onClick={() => setFilter('todos')}
-              className={`px-4 md:px-6 py-2 rounded-lg transition-all duration-300 text-sm md:text-base ${
+              className={`px-3 md:px-6 py-1.5 md:py-2 rounded-lg transition-all duration-300 text-xs md:text-base ${
                 filter === 'todos' 
                   ? 'bg-white text-[#1A0B2E] shadow-[0_0_15px_rgba(255,255,255,0.3)]' 
                   : 'bg-[#1A0B2E] text-white hover:bg-[#3B1B6B] border border-white/20'
@@ -128,7 +128,7 @@ const Projects = () => {
             </button>
             <button 
               onClick={() => setFilter('autoral')}
-              className={`px-4 md:px-6 py-2 rounded-lg transition-all duration-300 text-sm md:text-base ${
+              className={`px-3 md:px-6 py-1.5 md:py-2 rounded-lg transition-all duration-300 text-xs md:text-base ${
                 filter === 'autoral' 
                   ? 'bg-white text-[#1A0B2E] shadow-[0_0_15px_rgba(255,255,255,0.3)]' 
                   : 'bg-[#1A0B2E] text-white hover:bg-[#3B1B6B] border border-white/20'
@@ -141,7 +141,7 @@ const Projects = () => {
             </button>
             <button 
               onClick={() => setFilter('colaborativo')}
-              className={`px-4 md:px-6 py-2 rounded-lg transition-all duration-300 text-sm md:text-base ${
+              className={`px-3 md:px-6 py-1.5 md:py-2 rounded-lg transition-all duration-300 text-xs md:text-base ${
                 filter === 'colaborativo' 
                   ? 'bg-white text-[#1A0B2E] shadow-[0_0_15px_rgba(255,255,255,0.3)]' 
                   : 'bg-[#1A0B2E] text-white hover:bg-[#3B1B6B] border border-white/20'
@@ -156,13 +156,13 @@ const Projects = () => {
         </div>
         
         {/* Container dos Projetos - Caixa com altura fixa */}
-        <div className="flex-1 md:w-[80%] mx-auto px-4 md:px-0">
-          <div className="h-[calc(100vh-340px)] bg-[#1A0B2E] rounded-lg p-4
+        <div className="flex-1 md:w-[80%] mx-auto px-3 md:px-0">
+          <div className="h-[calc(100vh-280px)] md:h-[calc(100vh-340px)] bg-[#1A0B2E] rounded-lg p-3 md:p-4
                         overflow-y-auto border border-white/20
                         scrollbar-thin scrollbar-track-[#1A0B2E] scrollbar-thumb-white/20 
                         hover:scrollbar-thumb-white/40">
             <div 
-              className="flex flex-wrap gap-4 md:gap-6 justify-center"
+              className="flex flex-wrap gap-3 md:gap-6 justify-center"
               role="tabpanel"
               id={`${filter}-projects`}
               aria-label={`Lista de projetos ${filter === 'todos' ? 'todos' : filter === 'autoral' ? 'autorais' : 'colaborativos'}`}
