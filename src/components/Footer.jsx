@@ -1,5 +1,5 @@
 import SocialLinks from './SocialLinks';
-import { COLORS, Z_INDEX } from '../constants/theme';
+import { Z_INDEX } from '../constants/theme';
 
 export default function Footer() {
   return (

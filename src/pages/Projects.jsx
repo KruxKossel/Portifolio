@@ -4,10 +4,9 @@ import portfolioImage from '../assets/portfolioImage.png';
 import luaSBImage from '../assets/luaSB.png';
 import mastersofpwnageImage from '../assets/mastersofpwnage.png';
 import donoDoPedacoImage from '../assets/donoDoPedaco.png';
-import { MdKeyboardArrowRight } from 'react-icons/md';
+import mreSolucoes from '../assets/mreSolucoes.png';
 import ProjectCard from '../components/ProjectCard';
 import ProjectModal from '../components/ProjectModal';
-import { COLORS } from '../constants/theme';
 
 const Projects = () => {
   const [showContent, setShowContent] = useState(false);
@@ -68,7 +67,7 @@ const Projects = () => {
       title: "Plantech",
       shortDescription: "Sistema de gerenciamento de fazendas urbanas com múltiplos níveis de acesso.",
       fullDescription: "Sistema de gerenciamento de fazendas urbanas desenvolvido como TCC. Permite controle de atividades agrícolas com diferentes níveis de acesso para administração, compras, agricultura e vendas.",
-      tech: "C#, .NET, SQL Server",
+      tech: "C#, .NET, SQLite",
       repoLink: "https://github.com/KruxKossel/Plantech",
       liveLink: "",
       type: "colaborativo"
@@ -79,14 +78,25 @@ const Projects = () => {
       title: "Simulador de Batalhas",
       shortDescription: "Simulador de batalhas em turnos desenvolvido em Lua.",
       fullDescription: "Simulador de batalhas desenvolvido por mim em Lua, implementando um sistema de combate por turnos com diferentes classes de personagens.",
-      tech: "Lua, Roblox Studio",
+      tech: "Lua, Console",
       repoLink: "https://github.com/KruxKossel/Simulador-de-batalhas",
       liveLink: "",
       type: "autoral"
     },
     {
       id: 5,
-      image: mastersofpwnageImage, 
+      image: mreSolucoes,
+      title: "MRE Soluções",
+      shortDescription: "Site de uma empresa de soluções digitais.",
+      fullDescription: "Projeto colaborativo de desenvolvimento do site institucional da MRE Soluções, uma empresa especializada em serviços digitais. O site apresenta a empresa, seus serviços, formas de contato e identidade visual moderna, com foco em responsividade e performance.",
+      tech: "React, Next.js, Tailwind CSS, Vercel",
+      repoLink: "https://github.com/rafahthomaz14/MRE_Solucoes",
+      liveLink: "https://mresolucoes.vercel.app/",
+      type: "colaborativo"
+    },
+    {
+      id: 6,
+      image: mastersofpwnageImage,
       title: "Masters of Pwnage",
       shortDescription: "Jogo de cartas inspirado em Magic com temática de cibersegurança.",
       fullDescription: "Jogo de cartas open source inspirado em Magic, com temática de cibersegurança. Projeto colaborativo onde atuo como desenvolvedora contribuidora.",
@@ -97,55 +107,52 @@ const Projects = () => {
     }
   ];
 
-  const filteredProjects = filter === 'todos' 
-    ? projects 
+  const filteredProjects = filter === 'todos'
+    ? projects
     : projects.filter(project => project.type === filter);
 
   return (
     <div className="h-screen w-full flex flex-col relative pt-24 md:pt-28 pb-28 md:pb-28">
       <div className={`flex-1 flex flex-col transform transition-all duration-1000
                     ${showContent ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-        
+
         {/* Cabeçalho com título e filtros */}
         <div className="w-full md:w-[80%] mx-auto mb-3 md:mb-6 text-center">
           <h1 className="text-2xl md:text-4xl font-bold mb-3 md:mb-6 text-white">
             Meus Projetos
           </h1>
-          
+
           <div className="flex flex-wrap justify-center gap-2 md:gap-4" role="tablist">
-            <button 
+            <button
               onClick={() => setFilter('todos')}
-              className={`px-3 md:px-6 py-1.5 md:py-2 rounded-lg transition-all duration-300 text-xs md:text-base ${
-                filter === 'todos' 
-                  ? 'bg-white text-[#1A0B2E] shadow-[0_0_15px_rgba(255,255,255,0.3)]' 
+              className={`px-3 md:px-6 py-1.5 md:py-2 rounded-lg transition-all duration-300 text-xs md:text-base ${filter === 'todos'
+                  ? 'bg-white text-[#1A0B2E] shadow-[0_0_15px_rgba(255,255,255,0.3)]'
                   : 'bg-[#1A0B2E] text-white hover:bg-[#3B1B6B] border border-white/20'
-              }`}
+                }`}
               role="tab"
               aria-selected={filter === 'todos'}
               aria-controls="todos-projects"
             >
               Todos
             </button>
-            <button 
+            <button
               onClick={() => setFilter('autoral')}
-              className={`px-3 md:px-6 py-1.5 md:py-2 rounded-lg transition-all duration-300 text-xs md:text-base ${
-                filter === 'autoral' 
-                  ? 'bg-white text-[#1A0B2E] shadow-[0_0_15px_rgba(255,255,255,0.3)]' 
+              className={`px-3 md:px-6 py-1.5 md:py-2 rounded-lg transition-all duration-300 text-xs md:text-base ${filter === 'autoral'
+                  ? 'bg-white text-[#1A0B2E] shadow-[0_0_15px_rgba(255,255,255,0.3)]'
                   : 'bg-[#1A0B2E] text-white hover:bg-[#3B1B6B] border border-white/20'
-              }`}
+                }`}
               role="tab"
               aria-selected={filter === 'autoral'}
               aria-controls="autoral-projects"
             >
               Autorais
             </button>
-            <button 
+            <button
               onClick={() => setFilter('colaborativo')}
-              className={`px-3 md:px-6 py-1.5 md:py-2 rounded-lg transition-all duration-300 text-xs md:text-base ${
-                filter === 'colaborativo' 
-                  ? 'bg-white text-[#1A0B2E] shadow-[0_0_15px_rgba(255,255,255,0.3)]' 
+              className={`px-3 md:px-6 py-1.5 md:py-2 rounded-lg transition-all duration-300 text-xs md:text-base ${filter === 'colaborativo'
+                  ? 'bg-white text-[#1A0B2E] shadow-[0_0_15px_rgba(255,255,255,0.3)]'
                   : 'bg-[#1A0B2E] text-white hover:bg-[#3B1B6B] border border-white/20'
-              }`}
+                }`}
               role="tab"
               aria-selected={filter === 'colaborativo'}
               aria-controls="collaborative-projects"
@@ -154,14 +161,14 @@ const Projects = () => {
             </button>
           </div>
         </div>
-        
+
         {/* Container dos Projetos - Caixa com altura fixa */}
         <div className="flex-1 md:w-[80%] mx-auto px-3 md:px-0">
-          <div className="h-[calc(100vh-280px)] md:h-[calc(100vh-340px)] bg-[#1A0B2E] rounded-lg p-3 md:p-4
+          <div className="h-[calc(100vh-300px)] md:h-[calc(100vh-310px)] bg-[#1A0B2E] rounded-lg p-3 md:p-4
                         overflow-y-auto border border-white/20
                         scrollbar-thin scrollbar-track-[#1A0B2E] scrollbar-thumb-white/20 
                         hover:scrollbar-thumb-white/40">
-            <div 
+            <div
               className="flex flex-wrap gap-3 md:gap-6 justify-center"
               role="tabpanel"
               id={`${filter}-projects`}

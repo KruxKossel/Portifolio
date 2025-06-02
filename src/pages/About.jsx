@@ -7,7 +7,7 @@ import { RiJavascriptFill } from "react-icons/ri";
 import { SiC, SiLua, SiPostgresql, SiTailwindcss, SiTypescript } from "react-icons/si";
 import { TbBrandVscode } from "react-icons/tb";
 import { gsap } from 'gsap';
-import { MdKeyboardArrowRight, MdOutlineWorkHistory, MdSchool, MdCode, MdPersonOutline, MdOutlineAutoStories, MdClose } from "react-icons/md";
+import { MdOutlineWorkHistory, MdSchool, MdCode, MdPersonOutline, MdOutlineAutoStories, MdClose } from "react-icons/md";
 import { Z_INDEX } from '../constants/theme';
 import { BsLightbulb } from "react-icons/bs";
 
