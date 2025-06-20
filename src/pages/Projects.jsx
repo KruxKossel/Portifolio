@@ -5,6 +5,8 @@ import luaSBImage from '../assets/luaSB.png';
 import mastersofpwnageImage from '../assets/mastersofpwnage.png';
 import donoDoPedacoImage from '../assets/donoDoPedaco.png';
 import mreSolucoes from '../assets/mreSolucoes.png';
+import scrySyncHome from '../assets/scrySyncHome.png';
+
 import ProjectCard from '../components/ProjectCard';
 import ProjectModal from '../components/ProjectModal';
 
@@ -104,6 +106,17 @@ const Projects = () => {
       repoLink: "https://github.com/Masters-Of-Pwnage/mop-playable",
       liveLink: "https://masters-of-pwnage.github.io/mop-playable/",
       type: "colaborativo"
+    },
+    {
+      id: 7,
+      image: scrySyncHome,
+      title: "ScrySync OSINT",
+      shortDescription: "Plataforma de Capture The Flag (CTF) focada em OSINT.",
+      fullDescription: "ScrySync OSINT é uma plataforma de Capture The Flag (CTF) desenvolvida para desafios de Open Source Intelligence (OSINT). O sistema oferece um ambiente dinâmico para entusiastas de cibersegurança testarem suas habilidades de investigação, ao mesmo tempo em que garante a integridade da competição através de funcionalidades avançadas de backend e IA.",
+      tech: "React.ts, Supabase, Python (Backend), Flask, Docker, Azure App Service, PyJWT, Lucide React (Icons), Tailwind CSS.",
+      repoLink: "",
+      liveLink: "https://scrysync.vercel.app",
+      type: "autoral"
     }
   ];
 

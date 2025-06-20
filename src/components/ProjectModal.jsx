@@ -69,17 +69,19 @@ const ProjectModal = ({ project, onClose }) => {
             </div>
             
             <div className="flex flex-wrap gap-3 md:gap-4">
-              <a 
-                href={project.repoLink} 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 text-white hover:text-[#F0ABFC] transition-colors text-sm md:text-base
-                         bg-white/5 hover:bg-white/10 px-3 py-1.5 rounded-lg"
-                aria-label={`Acessar repositório do projeto ${project.title} no GitHub`}
-              >
-                <FaGithub className="text-lg md:text-xl" />
-                <span>Repositório</span>
-              </a>
+              {project.repoLink && (
+                <a 
+                  href={project.repoLink} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-white hover:text-[#F0ABFC] transition-colors text-sm md:text-base
+                           bg-white/5 hover:bg-white/10 px-3 py-1.5 rounded-lg"
+                  aria-label={`Acessar repositório do projeto ${project.title} no GitHub`}
+                >
+                  <FaGithub className="text-lg md:text-xl" />
+                  <span>Repositório</span>
+                </a>
+              )}
               {project.liveLink && (
                 <a 
                   href={project.liveLink} 

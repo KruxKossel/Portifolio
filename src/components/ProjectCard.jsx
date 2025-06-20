@@ -44,16 +44,18 @@ const ProjectCard = ({ project, onClick }) => {
         <div className="mt-2 md:mt-3">
           <div className="text-[10px] md:text-xs text-[#F0ABFC]">{project.tech}</div>
           <div className="flex gap-3 mt-2">
-            <a 
-              href={project.repoLink} 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-lg md:text-xl text-white hover:text-[#F0ABFC] transition-colors"
-              onClick={(e) => e.stopPropagation()}
-              aria-label={`Ver repositório do projeto ${project.title} no GitHub`}
-            >
-              <FaGithub />
-            </a>
+            {project.repoLink && (
+              <a 
+                href={project.repoLink} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-lg md:text-xl text-white hover:text-[#F0ABFC] transition-colors"
+                onClick={(e) => e.stopPropagation()}
+                aria-label={`Ver repositório do projeto ${project.title} no GitHub`}
+              >
+                <FaGithub />
+              </a>
+            )}
             {project.liveLink && (
               <a 
                 href={project.liveLink} 
