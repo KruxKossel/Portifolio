@@ -5,7 +5,7 @@ import luaSBImage from '../assets/luaSB.png';
 import mastersofpwnageImage from '../assets/mastersofpwnage.png';
 import donoDoPedacoImage from '../assets/donoDoPedaco.png';
 import mreSolucoes from '../assets/mreSolucoes.png';
-import scrySyncHome from '../assets/scrySyncHome.png';
+import scrySyncHome from '../assets/ScrySyncHome.png';
 
 import ProjectCard from '../components/ProjectCard';
 import ProjectModal from '../components/ProjectModal';
