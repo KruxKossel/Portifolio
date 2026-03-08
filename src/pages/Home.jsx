@@ -43,6 +43,8 @@ const Home = () => {
               <span className="text-sm md:text-base text-[var(--color-secondary)] hover:text-[var(--color-hover)] transition-default hover-lift">TypeScript</span>
               <span className="text-sm md:text-base text-[var(--color-secondary)] hover:text-[var(--color-hover)] transition-default hover-lift">C#</span>
               <span className="text-sm md:text-base text-[var(--color-secondary)] hover:text-[var(--color-hover)] transition-default hover-lift">Python</span>
+              <span className="text-sm md:text-base text-[var(--color-secondary)] hover:text-[var(--color-hover)] transition-default hover-lift">PHP</span>
+              
               
               {/* Especialidades */}
               <span className="text-sm md:text-base text-[var(--color-accent)] hover:text-[var(--color-hover)] transition-default hover-lift">DevSecOps</span>

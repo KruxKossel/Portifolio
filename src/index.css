@@ -77,6 +77,7 @@
 
 .bg-glass {
   background: var(--color-surface);
+  -webkit-backdrop-filter: blur(8px);
   backdrop-filter: blur(8px);
 }
 

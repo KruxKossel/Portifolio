@@ -16,7 +16,7 @@ export const CONFIG = {
   // Meta tags
   siteTitle: "Ellen Oliveira - Desenvolvedora Full Stack",
   siteDescription: "Portfólio pessoal de Ellen Oliveira, desenvolvedora full stack com foco em React, Node.js e .NET",
-  siteKeywords: "desenvolvedor, full stack, react, node.js, .net, javascript, typescript",
+  siteKeywords: "desenvolvedor, full stack, react, node.js, .net, javascript, typescript, php",
   
   // Configurações de contato
   contactEmail: "ellenprof57@gmail.com",

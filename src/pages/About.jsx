@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import CrowTerminal from '../components/CrowTerminal';
 import { FaReact, FaHtml5, FaCss3Alt, FaJava, FaCrow, FaPython, FaGitAlt, FaGithub, FaDocker } from "react-icons/fa";
 import { PiFileCSharpDuotone } from "react-icons/pi";
 import { IoLogoFirebase } from "react-icons/io5";
@@ -14,6 +15,7 @@ import { BsLightbulb } from "react-icons/bs";
 const About = () => {
   const [showContent, setShowContent] = useState(false);
   const [selectedTopic, setSelectedTopic] = useState(null);
+  const [isEggVisible, setIsEggVisible] = useState(false);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -147,9 +149,13 @@ No curto prazo, estou focada em aplicar meus conhecimentos em projetos desafiado
         <div className={`w-full px-4 md:px-[10%] transform transition-all duration-1000
                       ${showContent ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
 
-          {/* Corvo para todas as telas */}
+          {/* Corvo para todas as telas — clique para Easter Egg */}
           <div className="w-full flex justify-end mb-2 md:mb-3" style={{ zIndex: Z_INDEX.crow }}>
-            <FaCrow className="crow-icon text-2xl md:text-3xl text-black hover:text-gray-800 transition-colors" />
+            <FaCrow
+              className="crow-icon text-2xl md:text-3xl text-black hover:text-purple-600 transition-colors cursor-pointer"
+              onClick={() => setIsEggVisible(true)}
+              title="..."
+            />
           </div>
 
           {/* Cabeçalho */}
@@ -166,7 +172,7 @@ No curto prazo, estou focada em aplicar meus conhecimentos em projetos desafiado
               <button
                 key={topic.id}
                 onClick={() => setSelectedTopic(topic)}
-                className="bg-[#2C1250] rounded-lg p-2 md:p-3 text-left h-[40px] md:h-[50px]
+                className="bg-[#2C1250] rounded-lg px-2 py-2 md:px-3 md:py-3 text-left min-h-[50px]
                          hover:bg-[#3B1B6B] transition-all duration-300 hover:scale-[1.02]
                          border-2 border-black/50 hover:border-white/50 group 
                          shadow-[0_0_15px_rgba(139,92,246,0.1)] hover:shadow-[0_0_20px_rgba(255,255,255,0.1)]
@@ -215,6 +221,10 @@ No curto prazo, estou focada em aplicar meus conhecimentos em projetos desafiado
           </div>
         </div>
       </div>
+
+      {isEggVisible && (
+        <CrowTerminal onClose={() => setIsEggVisible(false)} />
+      )}
 
       {/* Modal ajustado para mobile */}
       {selectedTopic && (

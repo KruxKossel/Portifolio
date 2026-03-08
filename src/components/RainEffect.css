@@ -9,7 +9,7 @@
   justify-content: space-between;
   overflow: hidden;
   pointer-events: none; /* Garante que o fundo não afete a interação do usuário com a página */
-  z-index: 1; /* Ajusta os riscos acima do gradiente de fundo */
+  z-index: 0; /* Mantém a chuva sempre abaixo dos elementos interativos */
 }
 
 .rain-column {
